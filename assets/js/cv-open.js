@@ -1,6 +1,6 @@
 document.getElementById("openCV").addEventListener("click", function() {
     console.log("open cv");
-    window.open("../assets/document/Cv-truong.pdf", "_blank");
+    window.open("../assets/document/Cv-truong1.pdf", "_blank");
 });
 
 document.getElementById("mentem").addEventListener("click", function() {
