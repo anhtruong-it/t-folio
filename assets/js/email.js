@@ -23,9 +23,41 @@ function sendEmail(event) {
     // send the email using EmailJS
     emailjs.send('service_dxjbh6b', 'template_de04hhk', params).then(function(response) {
         console.log('email sent: ', response.status, response.text);
-        alert("Thank you for your submission!");
+
+        var notice = document.getElementById("notice");
+        var message = document.getElementById("notice-message");
+        var closeButton = document.getElementById("close-notice");
+
+        message.innerText = 'Thank you for your submission!';
+        message.style.backgroundColor = '#4caf50';
+
+        // show the notification
+        notice.style.display = 'block';
+
+        document.getElementById("name").value = '';
+        document.getElementById("email").value = '';
+        document.getElementById("subject").value = '';
+        document.getElementById("message").value = '';
+
     }, function(error) {
         console.error("email sending failed: ", error);
-        alert("Oops! Something went wrong. Please try again.");
+        message.innerText = 'Form submission failed!';
+        message.style.backgroundColor = '#44336';
+
+        // show the notification
+        notice.style.display = 'block';
+        // Hide the overlay
+        document.getElementById('overlay').style.display = 'none';
     });
+
+    // function to close the notification
+    function closeNotice() {
+        var notification = document.getElementById("notice");
+        notification.style.display = 'none';
+    }
+
+    // attach event listener to the close button
+    document.getElementById("close-notice").addEventListener('click', closeNotice);
+
+
 };
