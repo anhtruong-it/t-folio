@@ -1,6 +1,6 @@
 document.getElementById("openCV").addEventListener("click", function() {
     console.log("open cv");
-    window.open("../assets/document/Truong_Resume_1.pdf", "_blank");
+    window.open("https://porfolio-truong.s3.amazonaws.com/Truong_Resume.pdf", "_blank");
 });
 
 document.getElementById("mentem").addEventListener("click", function() {
